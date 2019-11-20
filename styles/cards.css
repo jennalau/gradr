@@ -1,0 +1,27 @@
+.card-wrapper {
+    background-color: white;
+    margin: 5%;
+    width: 50%;
+    height: 80vh;
+    /* box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);  */
+    border-radius: 4%;
+    overflow: auto;
+    overflow: hidden; 
+    display: block;
+}
+
+.zoom{
+    transition: all .9s;
+    -moz-transition: all .9s;
+    -webkit-transition: all .9s;
+    -o-transition: all .9s;
+    -ms-transition: all .9s;
+}
+
+.zoom:hover {
+ transform : scale(1.05);
+ -moz-transform : scale(1.05);
+ -webkit-transform : scale(1.05);
+ -o-transform : scale(1.05);
+ -ms-transform : scale(1.05);
+}

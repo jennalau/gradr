@@ -1,0 +1,9 @@
+#courses {
+/* display: flex;
+align-items: flex-start;
+justify-content: left; */
+}
+.card-wrapper{
+    width: 100%;
+    border-radius: 30px;
+}
