@@ -1,117 +1,184 @@
+<?php
+
+// get user login input
+// $email = $POST['email'];
+// $password = $POST['password'];
+
+
+// check if user exists (login)
+
+
+// user does not exist (register)
+
+
+// start session
+
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>gradr | dashboard </title>
-    <!-- Bootstrap -->
+    <title>gradr | dashboard </title>
+
+    <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="styles/nav-test.css">
+    <!-- <link rel="stylesheet" href="styles/navbar.css"> -->
+
+    <link rel="stylesheet" href="styles/cards.css">
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <!-- our style sheets -->
-    <link rel="stylesheet" href="./styles/navbar.css">
-    <link rel="stylesheet" href="./styles/dashboard.css">
-    <link rel="stylesheet" href="./styles/cards.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 </head>
+
 <body>
-<!-- start of wrapper -->
-<div class="wrapper">
-    <!-- start of navbar  -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <a href="dashboard.php">
-                <h3>gradr</h3>
-            </a>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <?php require "global/navbar-dashboard.php"?>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <!-- navbar toggle button -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                </div>
+                <h2> Dashboard </h2>
+            </nav>
+
+            <!-- start of main content -->
+            <div class="main-content">
+            <div class="card-columns">
+            <!-- card 1 -->
+                <div class="card">
+                    <div class="card-body zoom">
+                    <h5 class="card-title">GPA</h5>
+                        <h3 class="text-center">3.89</h3>
+                    </div>
+                </div>
+            <!-- card 2 -->
+                <div class="card">
+                    <div class="card-body zoom">
+                        <h5 class="card-title">Progress</h5>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            <!-- card 3 -->
+                <div class="card">
+                    <div class="card-body zoom">
+                    <h5 class="card-title">Current Courses</h5>
+
+                    <span class="badge badge-pill badge-info" style="font-size: 1.15rem; padding: 3% 7%; margin: 2% 0%;">
+                        Course 1
+                        <span class="badge badge-light" style="margin-left: 5%;">94%</span>
+                    </span>
+                    <br>
+
+                    <span class="badge badge-pill badge-info" style="font-size: 1.15rem; padding: 3% 7%; margin: 2% 0%;">
+                        Course 2
+                        <span class="badge badge-light" style="margin-left: 5%;">94%</span>
+                    </span>
+                    <br>
+
+                    <span class="badge badge-pill badge-info" style="font-size: 1.15rem; padding: 3% 7%; margin: 2% 0%;">
+                        Course 3
+                        <span class="badge badge-light" style="margin-left: 5%;">94%</span>
+                    </span>
+                    <br>
+
+                    <span class="badge badge-pill badge-info" style="font-size: 1.15rem; padding: 3% 7%; margin: 2% 0%;">
+                        Course 4
+                        <span class="badge badge-light" style="margin-left: 5%;">94%</span>
+                    </span>
+                    <br>
+                   
+                    
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-body zoom">
+                        <h5 class="card-title">Grades</h5>
+                        <canvas id="gradeChart"></canvas>
+                    </div>
+                </div>
+
+
+                
+
+                <div class="card p-3">
+                    <blockquote class="blockquote mb-0 card-body">
+                    <p id="quote"></p>
+                    </blockquote>
+                </div>
+
+     
+                <!-- <div class="card">
+                    <div class="card-body zoom">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div> -->
+         
+            </div>
+            <!-- end of main content -->
             
         </div>
+        <!-- end of Page Content -->
+            
 
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="dashboard.php">
-                <i class="fas fa-home"></i> 
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="grades.php">
-                <i class="fas fa-chart-bar"></i>  
-                    Grades
-                </a>
-            </li>
-          
-            <li>
-                <a href="courses.php">
-                <i class="fas fa-university"></i> 
-                    Courses
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <!-- end of navbar -->
+        <!-- <div class="line"></div> -->
 
-    <!-- start of main content -->
-    <div class="main-content" id="dashboard">
-        <!-- start of content header -->
-        <div class="content-header">
-            <div class="user dropdown">
-                <a href="#" id="imageDropdown" data-toggle="dropdown">
-                    <i class="fas fa-user-graduate"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="imageDropdown">
-                    <li role="presentation">
-                        <a class="dropdown-item" href="index.html">logout</a>
-                    </li>
-                </ul>
-            </div>
-            <h2>Welcome, ____!</h2>
         </div>
-        <hr>
-        <!-- end of content header -->
-
-        <!-- start of content body -->
-        <div class="content-body">
-            <div class="row">
-                <div class="column">
-                    <div class="card-wrapper zoom" style="height:40vh">progress bar</div>
-                    <div class="card-wrapper zoom"style="height:20vh">hi</div>
-                </div>
-                <div class="column">
-                    <div class="card-wrapper zoom"style="height:20vh">grade tracking</div>
-                    <div class="card-wrapper zoom"style="height:30vh"></div>
-                </div>
-            </div>
-        </div>
-        <!-- end of content body -->
-
     </div>
-    <!-- end of main content -->
-</div>
-<!-- end of wrapper -->
 
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- Char.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/progress-bar.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/grades.js"></script>
+    <script>
+    $(document).ready(function () {
 
+$("#sidebar").mCustomScrollbar({
+     theme: "minimal"
+});
 
+$('#sidebarCollapse').on('click', function () {
+    // open or close navbar
+    $('#sidebar').toggleClass('active');
+    // close dropdowns
+    $('.collapse.in').toggleClass('in');
+    // and also adjust aria-expanded attributes we use for the open/closed arrows
+    // in our CSS
+    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+});
 
-<!-- jQuery CDN - Slim version (=without AJAX) -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<!-- Popper.JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-<!-- Chart JS -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script>
-$(document).ready(function () {
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
 });
 </script>
-</body>
 
+
+  
+</body>
 
 </html>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins&display=swap');
+* {
+    font-family: 'Poppins', sans-serif, 'PT Sans', sans-serif, "HKGrotesk", Futura, Trebuchet MS, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1rem;
+}
+body {
+  background: linear-gradient(to right, #579CDD, #ACCDEF);
+  /* background: linear-gradient(to right, #0062E6, #33AEFF); */
+}
+
+.container {
+    width: 50%;
+    margin: 0;
+    transform: translateY(20%);
+}
+
+.btn {
+    background: #FBA29B;
+    background: #FC6A94;
+}
+
+
+.card-signin {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+}
+
+  .card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  
+  .card-signin .card-body {
+    padding: 2rem;
+  }
+  
+  .form-signin {
+    width: 100%;
+  }
+  
+  .form-signin .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+  }
+  
+  .form-label-group {
+    position: relative;
+    /* margin-bottom: 1rem; */
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+  
+  .form-label-group input {
+    /* height: auto; */
+    border-radius: 2rem;
+    padding: 5%;
+    margin: 2%;
+    border: 1px solid red;
+  }
+
+
+  
+  .form-label-group>input {
+    padding: 7%;
+  }
+
+  
