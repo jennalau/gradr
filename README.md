@@ -1,3 +1,3 @@
 # gradr
 
-An interactive grade tracker and GPA calculator for students
+A full-stack web application serving as a course task manager for students
